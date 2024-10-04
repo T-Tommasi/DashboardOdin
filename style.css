@@ -1,6 +1,6 @@
 * {
-    border: red 0.1px solid;
-}
+   /*border: red 0.1px solid; */
+} 
 
 body {
     margin: 0;
@@ -28,17 +28,36 @@ body {
     grid-row: 1 / 3;
     grid-column: 1 / 2;
     gap: 5%;
+    -webkit-box-shadow: 10px 10px 11px -8px rgba(0,0,0,0.49);
+    -moz-box-shadow: 10px 10px 11px -8px rgba(0,0,0,0.49);
+    box-shadow: 10px 10px 11px -8px rgba(0,0,0,0.49);
+    background-color: #16a34a;
+    color: white;
 }
 
 .sideMenu > div {
     display: grid;
     grid-template: repeat(6, 1fr) / 1fr;
-    text-align: center;
-    gap: 1%;
+    text-align: left;
+    gap: 5%;
+    margin-left: 15%;
 }
 
 .sideMenu > div > a{
+    display: flex;
     text-decoration: none;
+    color: white;
+    font-size: 1.2em;
+    align-items: center;
+}
+
+.sideMenu > div > a > img {
+    width: 4dvh;
+    margin-right: 10%;
+}
+
+.lowerMenu {
+    margin-top: 15%;
 }
 
 /* Styles for the dashboard header */
@@ -47,6 +66,10 @@ body {
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-template-rows: 0,5fr 1fr;
+    -webkit-box-shadow: 10px 10px 11px -8px rgba(0,0,0,0.49);
+    -moz-box-shadow: 10px 10px 11px -8px rgba(0,0,0,0.49);
+    box-shadow: 10px 10px 11px -8px rgba(0,0,0,0.49);
+    z-index: 1;
 }
 
 .searchbar {
@@ -61,20 +84,27 @@ body {
     width: 5dvh;
 }
 
+.searchbar input {
+    border-radius: 10px;
+    width: 70%;
+    height: 50%;
+}
+
 .notification {
     width: 3dvh;
 }
 
 .user {
     display: grid;
-    grid-template: auto / auto auto;
-    margin: auto;
+    grid-template: auto / 1fr auto auto;
     place-items: center;
     gap: 1%;
+    padding-right: 3%;
 }
 
 .user img{
     width: 5dvh;
+    grid-column: 2 / 3;
 }
 
 .userHello {
@@ -109,9 +139,11 @@ body {
 }
 
 .postButtons button {
-    height: 5dvh;
+    height: 4dvh;
     width: 10dvh;
     border-radius: 25px;
+    background-color: #16a34a;
+    color: white;
 }
 
 /* Styles regarding the central body of the administrative board */
@@ -119,17 +151,180 @@ body {
 .body {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    grid-template-rows: 1fr;
+    grid-template-rows: 0.1fr 1fr;
+    background-color: #bbf7d0;
+}
+
+.projectText, .newsText {
+    margin-left: 15px;
+    font-size: 1.3em;
+    place-content: center;
+}
+
+.projectText {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+
+}
+
+.newsText {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
 }
 
 .cards {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
+    gap: 15px;
+    margin: 15px;
+}
+
+.cards div {
+    display: grid;
+    grid-template: 1fr 5fr 1fr / repeat(3, 1fr);
+    border-radius: 15px;
+    border-left: #16a34a 5px solid;
+    -webkit-box-shadow: 10px 10px 11px -8px rgba(0,0,0,0.49);
+    -moz-box-shadow: 10px 10px 11px -8px rgba(0,0,0,0.49);
+    box-shadow: 10px 10px 11px -8px rgba(0,0,0,0.49);
+    background-color: white;
+    padding: 15px;
+}
+
+.cards div>strong{
+    grid-column: 1 / 4;
+    grid-row: 1 / 2;
+}
+
+.cards div>p {
+    grid-column: 1 / 4;
+    grid-row: 2 / 3;
+}
+
+.social img{
+    width: 2dvh;
+}
+
+.social {
+    display: flex;
+    justify-content: right;
+    align-items: right;
+    grid-column: 3 / 4;
+    grid-row: 3 / 4;
+    gap: 15px;
 }
 
 .rightMenu {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(2, 1fr);
+    gap: 15px;
+    margin: 15px;
 }
+
+.rightMenu div{
+    border-radius: 20px;
+    display: grid;
+    grid-template: repeat(3, 1fr) / 1fr;
+    gap: 10px;
+    padding: 15px;
+    font-size: 1vh;
+    -webkit-box-shadow: 10px 10px 11px -8px rgba(0,0,0,0.49);
+    -moz-box-shadow: 10px 10px 11px -8px rgba(0,0,0,0.49);
+    box-shadow: 10px 10px 11px -8px rgba(0,0,0,0.49);
+    background-color: white;
+}
+
+.rightMenu div>p {
+    border-top: black 1px dotted;
+    padding-top: 1%;
+}
+
+/* Font styles */
+.dancingScriptStandard {
+    font-family: "Dancing Script", cursive;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .dancingScriptHeavy {
+    font-family: "Dancing Script", cursive;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: italic;
+  }  
+
+.roboto-thin {
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+  }
+  
+  .roboto-light {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+  
+  .roboto-regular {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .roboto-medium {
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+  .roboto-bold {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  .roboto-black {
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+  }
+  
+  .roboto-thin-italic {
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;
+    font-style: italic;
+  }
+  
+  .roboto-light-italic {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+  }
+  
+  .roboto-regular-italic {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+  }
+  
+  .roboto-medium-italic {
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-style: italic;
+  }
+  
+  .roboto-bold-italic {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+  }
+  
+  .roboto-black-italic {
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-style: italic;
+  }
+  
